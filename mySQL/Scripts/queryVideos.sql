@@ -18,9 +18,11 @@
 DELIMITER $$ 
 
 CREATE PROCEDURE queryVideos()
-BEGIN
-	IF 
-	SELECT 
+proc_label:BEGIN
+	IF NOT isAuthenticated() THEN
+		# print some indicator
+		LEAVE proc_label:
+		SELECT 
 
 END $$
 DELIMITER ;
