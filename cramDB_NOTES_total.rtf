@@ -1,0 +1,235 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Calibri;}
+{\colortbl;\red255\green255\blue255;\red85\green142\blue40;\red0\green0\blue0;\red0\green121\blue165;
+\red255\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c33333\c55686\c15686;\csgenericrgb\c0\c0\c0;\csgenericrgb\c0\c47451\c64706;
+\csgenericrgb\c100000\c0\c0;}
+\margl1440\margr1440\vieww16160\viewh19580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 - switch origination, consider it for video attributes\
+\
+- generate path algorithmically as derived data\
+\
+- ensure 1-1 processed/raw video correl\
+\
+- get dummy data, divorce yourself from current running process\
+\
+
+\b \ul R CRUD
+\b0 \ulnone \
+C - records tp's, and\
+R - get all videos for ...\
+U - fix tp's\
+D - I want to get rid of a video, it should delete\
+\
+- Video Status variable\
+_ how many tp's?\
+_ enum \
+\
+\
+- experiment ... place in Notebook ... \
+---> be able to get to the video \
+---> pg & NB identifier would be enough to get to the video-notes, and then experiment notes\
+\
+- use-statistics for videos\
+?????\
+------------------\
+- diskVader stats, upload times, process fit-in\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 - old timestamps\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+Priorities:\
+\
+---> convert this all to a SQL-script which makes sense\
+1) Timepoint dashboard\
+2) CRUD\
+3) Progress Report\
+4) Schema\
+5) Rearrange foreign keys\
+6) Dummy Database, dummy metadata, dummy timepoints\
+*7) Derived data column \
+--> trigger for stored procedure\
+\
+
+\b Durant Q's::
+\b0 \
+- Can I have a FK-constraint be "make a new entry" in the tables?\
+- ... or kick off a request to insert one? (e.g. for the enumerations, in trying to update the possible-values table)\
+---> Fifth-NF\
+- how to cleanly automatically validate, or at least manually check, that a deletion cascade worked correctly\
+- howto build-in constraint: same person cannot have multiple timepoint trials for a given movie\
+- importing old, missing data\
+- does derived metrics need both keys of the Timepoints-composite-key?\
+- inserting values, will translate NULL ---> default\
+--> so in that case, does "not null (NN)" mean anything?\
+- conditional "not nulls" in the case of an additional boolean flag\
+- is a hollow-red possible? A foreign-key which canbe bull? i.e., I'm constrained by this table's key-instances, but only if my value is NN\
+- is an "association table" used to link two tables which have the same semantics, i.e. they mean the same thing, but they don't literally align as they have different representations?\
+- can I store a derived data field \
+- procedure for 
+\i de novo
+\i0  creating a database? i.e., for the initial stage, can't I just derive the enumerated 
+\b possibilities
+\b0  for a table's foreign-keys by the table's 
+\b factorized data
+\b0 ?\
+- why is crow's feet the default for the EERD?\
+- other 
+\b triggers
+\b0  besides 
+\b table-triggers\
+
+\b0 - parent relationships VS 
+\b "mentor"
+\b0  relationships\
+- if the video is the "originator", or parent, for several referencing, child tables, do they all auto-increment, or just the video?\
+- an index will be created for each foreign-key I create for a referencing//child table.... how does that work, why is that done? How can a table, a file, be split//organized into multiple different blocks? Can't a table only be indexed in one way, especially if there is some kind of organization?\
+- for display names, can I create an association table to link to a view?\
+- CASCADE, vs DELETE, vs RESTRICT, vs NO ACTION ----> inconsistencies?\
+----> what is the purpose of a foreign-key if both update & delete are "no action"?\
+\
+- resolving a set-tuple ... (sensors) ... easier to display if it has comma's\
+- Heat shock with stuff on...\
+\
+- \
+\
+** user authentication\
+** Roles, but a bit different ... views contingent on whether videos match\
+\
+
+\b Jeff Q's::
+\b0 \
+- Derived metrics?\
+- many processed for one raw?\
+- sample file-system?\
+- walking the nulls & noID (in the vim'd file)\
+- walking the schema for nulls (video-attrs, timepoints, etc.\
+- nulls?\
+- various statuses\
+\
+\
+-----------------------------------------------------------------------------------------------------------------------------------------------\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 WORM database vs WORN\
+\
+- derived data via trigger\
+--> faster response times\
+\
+** answer questions like what has been done\
+\
+TODO: input 2 paths (one for dv, other for .... local?)\
+\
+
+\b TRAP  FLAG IF NULL for timepoints
+\b0  ---> isTrapped [BOOL]\
+\
+Derived Timepoints:\
+- average for each\
+- transit time\
+- exit time\
+- dwell time\
+- entry time\
+--> as a reference for \
+\
+- still can get transit time if MISSED start ---> fullOvulation [BOOL]\
+- do it off any number of timepoints, the dervied\
+\
+generate archive stub:: \
+\
+- matLab is where you get the append of video iterations for the day, person\
+- hope -- dateRecorded --videoGeneration\
+\
+\
+the worry of data validation\
+\
+MatLab doesn't deal with nulls/
+\b blanks
+\b0  very well\
+---> slots \
+upload\
+RNAi: none --> null\
+HeatShock_treatment: none -> null\
+Sensors: NN (DIC without a movie)\
+OvNumber [1-dd] NN\
+GT: NN\
+Immob_method: NN\
+Date_recorded: NN -- CK\
+OldFileName: NN -- representation is familiar\
+Date_entered NN, timestamp\
+\
+--> processed movies sit in archive, \
+--> processed have archive-stub appends\
+- if no rnai, ends there\
+\
+Clicking through "no's" is kind of a PITA\
+Less manually convenient, but more programmatically inconvenient \
+\
+\
+Views for Virtual Tables\
+\
+\
+Make Test Repository:\
+- \
+\
+GREEN:: I am constrained BY these tables.\
+- On a hovered-table, green will align with red\
+- they're my parents because they tell me what to do ("Have this value! No, this one!")\
+- I can't exist until THEY do\
+- They tell me what to do, when they're changed. For example, they may get deleted or updated.\
+*** parents must come before their children\
+BLUE:: Are constrained by ME, I constrain these tables.\
+"I tell them what to do. Which values are ok, which aren't."\
+\
+In a foreign-key relationship, the 
+\b \cf2 referencing
+\b0  \cf3 table is GREEN (the child), since it is a child, and the 
+\b \cf4 referenced 
+\b0 \cf3 table is BLUE (the parent)\cf0 \
+\
+\
+- so in a diagram, my 
+\b ID
+\b0  is going to be highlighted blue, because it is someone else's foreign key to reference their parent. My non-unique elements will be green.\
+- categories_products examples\
+
+\b \cf5 RED
+\b0  \cf3 is for danger, as in this variable comes with a caveat.\
+- identifying VS non-idenifying relationship means, if you don't NEED \cf0 \
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+
+\b UNKNOWN STUFF:\
+\
+
+\b0 - Views\
+- Routines\
+- Stored procedures, functions, etc.\
+- Privileges/Grants\
+- Users\
+- cronJob\
+- \
+\
+\
+\
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+Future DDL, Schema concerns::\
+\
+- should heatshock be a var char, not a number? or maybe an enum would work best?\
+- should immob-method be an enum?\
+- should timepoints have isFull and isTrap on the video-attr's definition, or should it be on the main video file?\
+- should the initials be limited to 3?\
+- what kind of privileges should be given to whom?\
+\
+\
+\
+
+\b repo_filepath:  /<strain>/<rnai>/<heatshock>/\
+archive-stub: <owner>_<yy><MMM><dd>_##_Raw.tif
+\f1\b0 \
+ABC_15Jun07_01_Raw.tif
+\f0 \
+\
+\
+}

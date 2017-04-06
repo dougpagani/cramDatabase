@@ -1,0 +1,25 @@
+ArchiveMovie	Date	Initials	Movie	WormStrain	RNAiTreatment	HeatShock	Sensors	OvulationNumber	TempGrownAt	Immobilization	FullOvulation
+ABB_17Jan25_01_Raw.tif	2017 Jan 25	ABB	Test1_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+ABC_15Jun07_01_Raw.tif	2015 June 07	ABC	Test1_Raw.tif	UN1417	cku-80	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+ABC_15Jun07_02_Raw.tif	2015 June 07	ABC	Test5_Raw.tif	UN1417	cku-80	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+DEF_15Jul08_01_Raw.tif	2015 July 08	DEF	Test6_Raw.tif	UN1417	None	30m	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+DPA_17Jan25_01_Raw.tif	2017 Jan 25	DPA	substack_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+DPA_17Jan25_02_Raw.tif	2017 Jan 25	DPA	videoA_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+DPA_17Jan25_03_Raw.tif	2017 Jan 25	DPA	videoB_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_15Jun07_01_Raw.tif	2015 June 07	JAB	Test2_Raw.tif	UN1417	cku-80	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_15May08_01_Raw.tif	2015 May 08	JAB	950-965_Testing_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_15May08_02_Raw.tif	2015 May 08	JAB	Test_250_265Double_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_15May08_03_Raw.tif	2015 May 08	JAB	Test3_Raw.tif	UN1417	rho-1	30m	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_15May08_04_Raw.tif	2015 May 08	JAB	Test7_Raw.tif	UN1417	rho-1	30m	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_15May26_01_Raw.tif	2015 May 26	JAB	Test4_Raw.tif	UN1417	None	None	GCaMP3,DIC	1	20	10% agarose + beads 	yes
+JAB_15May26_02_Raw.tif	2015 May 26	JAB	Test8_Raw.tif	UN1417	None	None	GCaMP3,DIC	1	20	10% agarose + beads 	yes
+JAB_16May08_01_Raw.tif	2016 May 08	JAB	Test_250_265_Raw.tif	UN1417	cku-80	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_17Jan25_01_Raw.tif	2017 Jan 25	JAB	S_mall_TestingFile12_3456_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_17Jan25_02_Raw.tif	2017 Jan 25	JAB	Testing6893_439ARG_Raw.tif	UN1416	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_17Jan25_03_Raw.tif	2017 Jan 25	JAB	Testing_FileIndexInTextFile_2222222_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_17Jan25_04_Raw.tif	2017 Jan 25	JAB	Testing_Wormlab_ArchiveSheets_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_17May08_01_Raw.tif	2017 May 08	JAB	Test_350toSixtyFive_365_Raw.tif	UN1417	None	30m	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+JAB_18May08_01_Raw.tif	2018 May 08	JAB	TestFiveFiftyToFiveSeventyFive_Raw.tif	UN1417	fln-1	60m30m	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+PFA_17Jan25_01_Raw.tif	2017 Jan 25	PFA	Substack_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+PFA_17Jan25_02_Raw.tif	2017 Jan 25	PFA	Substack5_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes
+PFA_17Jan25_03_Raw.tif	2017 Jan 25	PFA	Substack6_Raw.tif	UN1417	None	None	GCaMP3,DIC	2	20	10% agarose + beads (JBM1 pg25)	yes

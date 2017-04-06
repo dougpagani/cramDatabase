@@ -1,0 +1,9 @@
+CRAM-DB items:
+
+- download script from DiskVader
+- accessing programmatically diskVader
+- being able to store just Raw, and the processing parameters
+- macport to install
+
+- sticky little things, dialog boxes, input allowances
+- dialog box no confirmation
