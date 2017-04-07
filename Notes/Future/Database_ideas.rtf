@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww16160\viewh9300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CRUX-POINTS:\
+\
+- import strategy for enumerations\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+CONSIDERATIONS:\
+- 1-1 processed-raw, or different?\
+- bunch of views for the algorithms people are interested in?\
+- analytical pipeline is integrated in R, and flows backwards?\
+\
+- query-optimization, best option for complex queries\
+- will these complex ranged-queries bog stuff down? What is the best option? build a huge table? How do you test & fiddle with that,\
+... speaking of computational time\
+\
+Future DDL, Schema concerns::\
+\
+- should heatshock be a var char, not a number? or maybe an enum would work best?\
+- should immob-method be an enum?\
+- should timepoints have isFull and isTrap on the video-attr's definition, or should it be on the main video file?\
+- should the initials be limited to 3?\
+- what kind of privileges should be given to whom?\
+\
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 IDEAS:\
+\
+- be able to set how many timepoints you'd like\
+- track which videos were deleted, and which commit would capture those\
+- have a master account for ERIN (master)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul Metrics for the master:\ulnone \
+- who is using what?\
+- what has been changed?\
+- is some kind of video being under-utilized?\
+- new enums\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 - \ul Fields\ulnone \
+1) video-status-variable ---> enumeratively controlled\
+2) desired timepoint-total (can increase it after the fact)\
+3) video.experiment\
+4) video.paper-ISBN\
+5) notebook location for certain methods (immobilization, maybe heatshock)\
+6) use-statistics for each video, person, etc.\
+7) timestamp of OLD movies (estimates for when they were taken)\
+8) Is this a de-novo\
+- another field in the videos for experiment-associated.\
+- another table which tracks each query for each person.\
+- another table which tracks each query for each attribtue, or each video.\
+- each video can track whether it was pulled by a query, and increases count-indicator.\
+\
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+
+\b UNKNOWN STUFF:
+\b0 \
+UTILITIES TO LOOK INTO:\
+\
+- views\
+- routines, scheduled events\
+- privilege/grant diversity\
+- cronJob\
+- mysql.user\
+\
+}

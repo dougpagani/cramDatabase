@@ -16,11 +16,11 @@ DECLARE exit_code BOOL DEFAULT false;
 	SELECT person.pw_hash INTO stored_hash FROM person
 	WHERE  (person.initials = abc);
 
-IF((pwdhash LIKE stored_hash),
-# then do ...
+IF  (pwdhash LIKE stored_hash) THEN 
+
 SET @user_logged_in := abc
-SET exit_code = true,
-)
+SET exit_code = true;
+
 # ELSEIF true THEN 
 
 # destroy the connection? But that would be costly in terms of time for the app's action.
