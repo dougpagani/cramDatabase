@@ -10,7 +10,8 @@
 
 DELIMITER $$ 
 
-CREATE PROCEDURE submitTPS(IN tps_tuple VARCHAR(45), OUT exit_code BOOL)
+# Pass them in individually
+CREATE PROCEDURE submitTPS(IN tps_tuple VARCHAR(45))
 BEGIN
 	# Check if logged-in.
 	
@@ -18,6 +19,8 @@ BEGIN
 
 	# TODO: figure out this converstion//hand-off
 	INSERT INTO timepoints VALUE(tps_tuple);
+	INSERT INTO `timepoints` (`vid`, `scientist`, `entry_start`, `entry_stop`, `exit_start`, `exit_stop`) 
+VALUES (1, 'JAB', 33, 23, 140, 220);
 
 END $$
 DELIMITER ;

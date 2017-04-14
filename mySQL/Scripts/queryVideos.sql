@@ -17,12 +17,19 @@
 
 DELIMITER $$ 
 
-CREATE PROCEDURE queryVideos()
+CREATE PROCEDURE queryVideos(IN a, IN b, IN c)
 proc_label:BEGIN
-	IF NOT isAuthenticated() THEN
+	IF NOT isAuthenticated() THEN BEGIN
 		# print some indicator
 		LEAVE proc_label:
-		SELECT 
+		set result := false;
+	END; END IF; 
+	
+	ELSE
+
+	SELECT a FROM b WHERE c;
+	
+select result;
 
 END $$
 DELIMITER ;
