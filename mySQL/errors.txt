@@ -1,0 +1,1 @@
+(1064, u"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DELIMITER $$ \n\nCREATE PROCEDURE createScientist(IN abc CHAR(3), IN fn VARCHAR(20' at line 7")

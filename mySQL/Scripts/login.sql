@@ -1,16 +1,17 @@
 # login
 # in: initials, pwd-hash
 # out: boolean for whether the @logged-user SESSION-VARIABLE was successfully set, or not
+USE cram;
+
 DROP PROCEDURE IF EXISTS login;
 
 DELIMITER $$
 
-CREATE PROCEDURE login(IN abc char(3), IN pwdhash CHAR(64),
-								OUT exit_code boolean)
+CREATE PROCEDURE login(IN abc char(3), IN inputhash CHAR(64))
 BEGIN
 DECLARE stored_hash char(64);
 -- DECLARE exit_code BOOL DEFAULT false;
-SET exit_code := false;
+SET @exit_code := false;
 
 
 
@@ -20,9 +21,10 @@ SET exit_code := false;
 	WHERE  (person.initials = abc);
 
 # compare two strings
-IF(pwdhash LIKE stored_hash) THEN BEGIN
+IF(NOT STRCMP(inputhash, stored_hash)) THEN BEGIN
 # then do ...
-    SET @u := abc;
+    SET @user := abc;
+	SET @pwdhash := inputhash;
     SET @exit_code := true;
 	
 END; END IF;
@@ -47,3 +49,6 @@ DELIMITER ;
 #??? 
 # 1. how to destroy a connection f/ a statement
 # 2. how to fetch exit code
+
+#call login('DPA', 'e77a58908f66bf61ac22e5d6131288c54295cfb97153d1bf180eff97f3b53232');
+

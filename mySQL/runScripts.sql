@@ -1,0 +1,11 @@
+USE cram;
+/*\. /Users/Doug/Projects/cram_db/mySQL/Scripts/createScientist.sql;*/
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/isAuthenticated.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/isLogged.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/login.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/loginf.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/runScripts.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/submitTPS.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/todoList.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/todoList2.sql;
+\. /Users/Doug/Projects/cram_db/mySQL/Scripts/uploadTPS.sql;
