@@ -8,29 +8,25 @@
 
 # IN: a text-s
 USE cram;
-
 DROP PROCEDURE IF EXISTS submitTPS;
-
 
 DELIMITER $$ 
 
 # Pass them in individually
-CREATE PROCEDURE submitTPS(IN v INT, IN t1 INT, IN t2 INT, IN t3 INT, IN t4 INT)
+CREATE PROCEDURE submitTPS(IN v INT, IN s CHAR(3), IN t1 INT, IN t2 INT, IN t3 INT, IN t4 INT)
 BEGIN
-DECLARE exit_code BOOL default false;
 	# Check if logged-in.
 	
 	# Check if duplicate-person.
-	
-	IF isAuthenticated() THEN BEGIN
-	INSERT INTO timepoints VALUES (v, @user, t1, t2, t3, t4);
-	SET exit_code := true;
-	END; END IF;
-SELECT exit_code;
+
+	# TODO: figure out this converstion//hand-off
+	INSERT INTO timepoints VALUES (v, s, t1, t2, t3, t4);
+
 END $$
 DELIMITER ;
 
 # Examples
 
-#call submitTPS(1, 33, 23, 140, 220);
+
+#call uploadTPS(1, 'AAA', 33, 23, 140, 220);
 #select * from timepoints;

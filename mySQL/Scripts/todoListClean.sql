@@ -13,16 +13,23 @@ BEGIN
 SELECT vid, owner, strain, rnai, date_recorded, archive_filepath, old_file_name#, full_ovulation, is_trap
 FROM video
 WHERE vid IN 
-	(SELECT vid FROM video_metrics WHERE "count(scientist)" < 3 AND scientist != @user);
+	(SELECT vid FROM video_metrics WHERE "count(scientist)" < 3)
+AND vid NOT IN
+	(SELECT vid FROM timepoints WHERE scientist = @user);
+#EXISTS(SELECT 1 FROM timepoints WHERE scientist = @user);
 
 END $$
 DELIMITER ;
-
-# call todoList();
 /*
+call todoListClean();
+SELECT * FROM timepoints;
+SELECT @user := "dpa";
 select vid, owner
 FROM video
 WHERE vid IN (SELECT vid FROM video_metrics WHERE "count(scientist" < 3)
-AND video.owner = "dpa";*/
+AND video.owner = "dpa";
+
 #SELECT @user;
 
+SELECT 1 FROM timepoints WHERE scientist = @user;
+*/

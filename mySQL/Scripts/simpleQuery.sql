@@ -45,7 +45,7 @@ AND is_trap LIKE @p11 # 11 -- B
 
 END $$
 DELIMITER ;
-
+/*
 -- ---------------------------
 # TESTS
 -- call simpleQuery(o, s, r, hs, srs, gt, im, datr, ofn, fo, it);
@@ -70,3 +70,5 @@ AND is_trap LIKE "%"
 
 SELECT * FROM video;
 -- ---------------------------------------------------------------
+
+*/

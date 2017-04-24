@@ -56,10 +56,10 @@ SELECT @exit_code, CONCAT("Rows affected: ", ROW_COUNT()) AS infoMessage;
 END $$
 DELIMITER ;
 -- END FUNCTION
-
+/*
 -- EXAMPLES
 call changeMetadata(1, null, null, null, null, null, null, null, null, null);
-call changeMetadata(1, "strain", null, null, null, null, null, null, null, null);
+call changeMetadata(1, "strain", r, hs, s, ovn, gt, imm, fo, it);
 
 
 
@@ -92,3 +92,4 @@ VALUES
 SELECT LAST_INSERT_ID(); 
 
 
+*/

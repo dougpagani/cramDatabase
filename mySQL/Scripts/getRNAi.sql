@@ -1,0 +1,14 @@
+USE cram;
+
+DROP PROCEDURE IF EXISTS getRNAi;
+DELIMITER $$
+
+
+CREATE PROCEDURE getRNAi()
+BEGIN
+
+
+select * from rnai_enum;
+
+END $$
+DELIMITER ;

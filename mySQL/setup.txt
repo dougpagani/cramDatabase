@@ -1,0 +1,2 @@
+
+cat Scripts/*.sql | mysql -uroot -pnopass
