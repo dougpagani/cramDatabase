@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww16160\viewh9300\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Hi Professor,\
+\
+I apologize for submitting the project-components a day later than I committed to. I was working to frustrating-end on the problem of importing, rendering, and displaying the actual image files (TIF) into R, and RShiny. It has not been as straight-forward has I had hoped.\
+\
+The problem I'm hitting is that these TIF files are actually an adapted format of the container which is the TIF format. TIF files do not have discrete standards, as the format was more-or-less designed to be extensible. Accordingly, applications can design their own "tags" to annotate the TIF files, and deal with them accordingly. As a result, these tags are essentially application-specific, and so in this case, the TIF files I'm dealing with are ImageJ//FIJI-specific (this can be seen when digging into the internals of the example data). \
+\
+This has actually answered an old question of mine when it comes to the great yet peculiar functionality of ImageJ, capable of displaying these individual image-files as discrete images\
+\
+The possible solutions I have imagined:\
+\
+1) Develop an interface/driver for R which can handle TIF files. There are two packages available, actually, for reading TIFs in R. A warning is thrown upon import, of handling unknown TIF-container flag. This tag is what enables FIJI to recognize it is dealing with an image file that is actually composed of several images (typically ~500), and represent them as "stacks." This functionality would have to be manually implemented, or ported, to R, if it is to be able to read them as-is. This would involve digging into the internals of R, as well as FIJI, as well as the TIF-standard. This could take a very long time -- I've identified a couple experts in the field who may be of assistance, but this avenue would be the most time-intensive.\
+\
+2) Use a system-call to open the file, whose path was fetched from MySQL, in FIJI. This would unfortunately decompose the nice singular environmeny of working in the analytics dashboard, but it wouldn't be a huge deal. It would be, in the very least, most-familiar to the end-users. This would be the least time-intensive, I think, but prone to the most errors. The user experience would be a side-by-side of the app, where you insert the values, and the fiji-app, which is rendering the image.\
+\
+3) Import the file-path of a directory, instead, and all its contained images. This would require a re-definition of what the data is, and so would require a change in a completely different module/API, that being the first-part I reviewed, the image-processing-pipeline, facilitated by FIJI-macros. Essentially, at the end, instead of saving the processed "movie" as a single image-file, it would save each stack as a numbered tif file inside a defining contained, i.e. a directory. However, what this would allow for is analytics-dashboard-side display, and thus facilitate a more cohesive "user experience." I can already imagine how I would implement the rendering & output in RShiny -- I would fetch the images-folder, and then load each bitmap sequentially into an ordered vector or list. I could then make use of the sliderInput API already built in RShiny, and have the user control the perusal of the stacks of the representative "video" with a slider-bar, which would control an indexing function of the vector loaded with images/bitmaps.\
+\
+Each has its advantages & disadvantages, as you can imagine. I am leaning towards 3, but I would like your thoughts. It may cause more friction with the lab, since I'd be changing a standard//process. Best Case would be if I could just take the images, and then upon App-request, ask fiji to split it up into individual files, pipe them out into a directory, then load that. The underlying data format wouldn't need to change. BUT I'm pretty certain that it would be incredibly slow, seeing as these videos are nearly half a GB. \
+\
+Anyways, this isn't essential I suppose, so I will work on the other features. The app in its current state has nearly all the requirements, save some easy POC of each aspect of CRUD. I won't really want to allow a lot of update & deletion 
+\i via
+\i0  user-interaction, but I have a couple ideas that will be quick to implement tonight. I think I have unintentionally accomplished all of the EC-requirements anyways, so I can endure the penalty. \
+\
+I also want to implement some basic error-handling for incorrect username & such, so you don't have to constantly reload the app if you type something in wrong and mySQL throws R-server a fatal, unhandled error.\
+\
+Even though there are some issues for the full-vision, I think they can be worked-out without too much problem, so I have plenty of hope :)\
+\
+Best,\
+\
+Doug\
+\
+}
